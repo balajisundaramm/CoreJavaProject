@@ -1,0 +1,105 @@
+Prototype of ToDoApp Project:
+
+When the ToDoApp solution is run, the following should be displayed:
+
+Press 1 to Create Category
+Press 2 to Load Category
+Press 3 to Search
+Press 4 to List
+Press 5 to Exit
+Enter choice:
+
+If 1 is given as input, 
+a) you should first ask the user to enter name of category.
+You should validate whether this name is already used by another as a business validation (assume the path to a folder and concat the name to this and using File class, validate).
+b) Then you should display the following menu:
+
+Press 1 to Add a Task
+Press 2 to Edit a Task
+Press 3 to Remove a Task
+Press 4 to List the Tasks
+Press 5 to Search
+Press 6 to Go back
+
+If 1 is selected,
+i) you should ask the user to input a task name (this has to be unique)
+ii) then take inputs of description, due date, priority, tags (comma separated words)
+
+Implementation tip: Once all the details of the task is given, you should insert the task info into the file. Concat the info like this:
+
+task_id = name:description:status:priority:cr_dt:due_dt:tag1,tag2,tag3..tagx
+
+vi) When 2 is selected (Edit), you should allow the user to  a) remove or change individual task info 
+vii) A user can remove a task that exits only. All its info has to be removed from the file.
+viii) When 4 is selected (List), the user should be shown the following submenu:
+
+Press 1 to list tasks by alphabetical listing by name
+Press 2 to list tasks by due date
+Press 3 to list tasks by created date
+Press 4 to list tasks by longest time
+
+Depending on user input, the sorting of tasks have to be done.
+
+ix) When 5 is selected (Search), you should ask the user to input a string to search.
+This string has be searched in the entire contents of the categories(name, email,phone num, tags, etc) and the following should be displayed:
+
+Total number of occurances : <num>
+Number of occurances in description: <num>
+Matches found:
+<task name1 - desc text1>
+<task name2 - desc text2>
+...
+Number of occurances in name: <num>
+<task name1>
+<task name2>
+...
+Number of occurrances in tags: <num>
+<task name ->
+<task name ->
+
+In the outer menu, if 2 is given as input (Load Category), you should ask the user to input the name of category (which should exist) and then you will display the same inner menu where in the user can now add,edit,remove,list,search from the loaded tasks.
+
+Implementation tips:
+a)Implement the TodoApp solution using basic MVC demoed example. Simply create a class with main() method that interacts with user and provides functionality. No need to create any other class. Create static methods to reuse validation.
+
+classes to create:
+StartApp with main() will act as the View to the user. In the main(), code the menu, user interaction, taking input, showing messages, invoking business logic
+
+A Task class to hold data about a task (all has-a relationship create as ins. var).
+
+TasK class represents the bean:
+- name
+- desc
+- cr_dt
+- end_dt
+- priority
+- status
+- tags
+
+TodoModel will hold business methods like:
+public String addTask(Task t,String catName)
+public List<Task> search(String str)
+public String checkIfCategoryExists(String name)
+public String update(Task old, Task new)
+public String delete(String taskName)
+public List<Task> getTasksBasedOnCrDate(String catName) // for category
+public List<Task> getTasksBasedOnCrDate() // for all categories
+public List<Task> getTasksBasedOnDueDate(String catName)
+public List<Task> getTasksBasedOnDueDate() 
+public List<Task> getTasksBasedOnTimePending(String catName)
+public List<Task> getTasksBasedOnTimePending()
+
+For Add Task Usecase:
+1) StartApp->main()->display menu, accept category name as input, invoke model.checkIfCategoryExists(), if it does not, then create Task bean object with all user 
+inputs and pass to model.addTask() method.
+
+model.checkIfCategoryExists():
+When a category name as input, create a File instance with the input name as constructor argument, verify if this file exists and if not, you can create the file. 
+It is into this file that you will write the contents once the user adds/edits/removes a task.
+Use a FileWriter encapsulated in a BufferedWriter to do file writing (Pass true as its second parameter to append to the file).
+In the file, one line represents one tasks input.
+You can use BufferedWriters newLine() method to insert a new line in the file.
+For removing a line (a contact), you will have to copy the contents of the file temporarily to memory except the one line and
+then write back to the same file, overwriting the contents.
+
+
