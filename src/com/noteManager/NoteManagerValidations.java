@@ -44,7 +44,7 @@ public class NoteManagerValidations {
     public static String validateDescription(String des){
         final Pattern VALIDATE_DES =Pattern.compile("^[A-Z0-9 ,.+!@#$%^<&*>(:;')\"_-\\`|=~]{6,250}$",Pattern.CASE_INSENSITIVE);
         Matcher matcher = VALIDATE_DES.matcher(des);
-        String msg="Description cannot be a word should contain words..";
+        String msg="Description should be combination of words.. character must be minimum 6.";
         inputValidation(des);
         if (matcher.find()){
             return "SUCCESS";
@@ -103,7 +103,7 @@ public class NoteManagerValidations {
             return "SUCCESS";
         }
         else {
-            msg="Tags can be a collection of words. It maynot contain special characters";
+            msg="Tags can be a collection of words. It may not contain special characters";
         }
         return msg;
 

@@ -49,18 +49,18 @@ public class ListOfCollections {
             return true;
     }
 
-    public static void printMap(Map<String, FileTime> map)
+    public static void printMap(Map<String, String> map)
     {
-        for (Map.Entry<String, FileTime> entry : map.entrySet())
+        for (Map.Entry<String, String > entry : map.entrySet())
         {
-            System.out.println("Catagory : " + entry.getKey() + "|| Created date : "+ entry.getValue());
+            System.out.println("Category : " + entry.getKey() + "\n\nTask details in the catagory :\n"+ entry.getValue());
         }
     }
 
     public static void printMapForCreatedDate(SortedSet<Map.Entry<String,FileTime>> map){
         for (Map.Entry<String, FileTime> entry : map)
         {
-            System.out.println("Catagory : " + entry.getKey() + "|| Created date : "+ entry.getValue());
+            System.out.println("Category : " + entry.getKey() + "\nCreated date : "+ entry.getValue()+"\n");
         }
     }
 

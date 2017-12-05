@@ -18,6 +18,17 @@ public class ViewUtilityMethods {
         System.out.println("Enter your choice");
     }
 
+    public static void menuForEdit(){
+        System.out.println("Press 1 to edit name");
+        System.out.println("Press 2 to edit description");
+        System.out.println("Press 3 to edit priority");
+        System.out.println("Press 4 to edit due date");
+        System.out.println("Press 5 to edit status");
+        System.out.println("Press 6 to edit tags");
+        System.out.println("Press 7 to finish editing");
+        System.out.println("Enter your choice");
+    }
+
     public static void menuForList() {
         System.out.println("Press 1 to list by name");
         System.out.println("Press 2 to list by priority");
@@ -27,6 +38,7 @@ public class ViewUtilityMethods {
     }
 
     public static void menuForStatus() {
+        System.out.println("Choose your status");
         System.out.println("Press 1 for IN-PROCESS");
         System.out.println("Press 2 for Yet to be STARTED");
         System.out.println("Press 3 for COMPLETED");
@@ -72,7 +84,7 @@ public class ViewUtilityMethods {
         String content=sc2.nextLine();
         System.out.println("Content added successfully!!!");
         System.out.println("------------------------");
-        System.out.println("Creating Email Bean...");
+        //System.out.println("Creating Email Bean...");
         EmailBean bean=new EmailBean(email,pass,toEmail,subject,content);
         List<EmailBean> list=new ArrayList<EmailBean>();
         list.add(bean);

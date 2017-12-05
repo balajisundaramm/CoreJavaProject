@@ -10,5 +10,6 @@
     <orderEntry type="library" name="itextpdf-5.4.1-sources" level="project" />
     <orderEntry type="library" name="itextpdf-5.4.1" level="application" />
     <orderEntry type="library" name="mail" level="application" />
+    <orderEntry type="library" name="dom4j-1.6" level="application" />
   </component>
 </module>

@@ -11,7 +11,7 @@ public class TaskBean implements Serializable {
     private int priority;
 
     public TaskBean() {
-        System.out.println("Bean-->no arg cons");
+
     }
 
     public TaskBean(String name) {
@@ -27,7 +27,6 @@ public class TaskBean implements Serializable {
         this.status = status;
         this.cre_Date = cre_Date;
         this.priority = priority;
-        System.out.println("bean--> para cons");
     }
 
 
@@ -37,7 +36,7 @@ public class TaskBean implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-        System.out.println("Bean-->setName"+name);
+        //System.out.println("Bean-->setName"+name);
     }
 
     public String getDescription() {
@@ -46,7 +45,7 @@ public class TaskBean implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
-        System.out.println("Bean-->setDes"+description);
+        //System.out.println("Bean-->setDes"+description);
 
     }
 
@@ -56,7 +55,7 @@ public class TaskBean implements Serializable {
 
     public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
-        System.out.println("Bean-->setDueDate"+dueDate);
+       // System.out.println("Bean-->setDueDate"+dueDate);
     }
 
     public String getTagLine() {
@@ -65,7 +64,7 @@ public class TaskBean implements Serializable {
 
     public void setTagLine(String tag) {
         this.tagLine = tag;
-        System.out.println("Bean--> setTagLine"+tag);
+       // System.out.println("Bean--> setTagLine"+tag);
     }
 
     public int getPriority() {
@@ -74,7 +73,7 @@ public class TaskBean implements Serializable {
 
     public void setPriority(int priority) {
         this.priority = priority;
-        System.out.println("Bean--> setPriority"+priority);
+       // System.out.println("Bean--> setPriority"+priority);
     }
 
     public String getStatus() {
